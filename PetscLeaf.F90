@@ -328,7 +328,7 @@ SUBROUTINE setupMatA_petsc(c,rx,ry,rz)
             c6=0
           ENDIF
         
-          IF(k_g == grid%y_cells) THEN
+          IF(k_g == grid%z_cells) THEN
             c7=0
           ENDIF
 
