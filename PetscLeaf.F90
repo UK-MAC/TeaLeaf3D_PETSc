@@ -3,16 +3,10 @@
 MODULE PETScTeaLeaf
 
   USE definitions_module
-
+  use petscksp
+  use dmda
+  
   IMPLICIT NONE
-
-#include "finclude/petscvec.h"
-#include "finclude/petscmat.h"
-#include "finclude/petscksp.h"
-#include "finclude/petscpc.h"
-#include "finclude/petscdm.h"
-#include "finclude/petscdmda.h"
-#include "finclude/petscdmda.h90"
 
   INTEGER :: perr
   INTEGER :: mpisize
@@ -52,6 +46,8 @@ SUBROUTINE setup_petsc(eps,max_iters)
                     lx(1:px),ly(1:py),lz(1:pz),                         &
                     petscDA,perr)
 
+  call DMSetFromOptions(petscDA,perr)
+  call DMSetUp(petscDA,perr)
   ! Setup the KSP Solver
   CALL KSPCreate(MPI_COMM_WORLD,kspObj,perr)
   CALL KSPSetTolerances(kspObj,eps,PETSC_DEFAULT_REAL,PETSC_DEFAULT_REAL,max_iters,perr)
