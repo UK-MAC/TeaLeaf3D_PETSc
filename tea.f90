@@ -33,11 +33,11 @@ MODULE tea_module
 
   USE data_module
   USE definitions_module
-  !USE MPI
+  USE MPI
   USE PETScTeaLeaf
 
   IMPLICIT NONE
-  include "mpif.h"
+  !include "mpif.h"
 
 CONTAINS
 
