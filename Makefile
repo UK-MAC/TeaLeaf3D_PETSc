@@ -64,13 +64,13 @@
 # The variables OTHER_LIBS and HYPRE_LIB can be used to set these up on the make line.
 # 
 # cd /home/usid
-# git clone -b maint https://bitbucket.org/petsc/petsc petsc-3.5.2
-# cd petsc-3.5.2
+# git clone -b maint https://bitbucket.org/petsc/petsc petsc-3.8.0
+# cd petsc-3.8.0
 # ./configure --download-fblaslapack --download-hypre --download-mpich --with-debugging=0 --with-c2html=0
-# make PETSC_DIR=/home/usid/petsc-3.5.2 PETSC_ARCH=arch-linux2-c-opt all
-# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/usid/petsc-3.5.2/arch-linux2-c-opt/lib/
+# make PETSC_DIR=/home/usid/petsc-3.8.0 PETSC_ARCH=arch-linux2-c-opt all
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/usid/petsc-3.8.0/arch-linux2-c-opt/lib/
 # cd /home/usid/TeaLeaf_PETSc
-# COM_PATH_P=/home/usid/petsc-3.5.2/arch-linux2-c-opt make
+# COM_PATH_P=/home/usid/petsc-3.8.0/arch-linux2-c-opt make
 #
 # Here is an example of how you might compile with the intel compiler if the location of libraries is not already loaded via a module system.
 # COM_PATH_P=/home/usid/petsc-3.5.2/intel-13.1-opt HYPRE_LIB=/opt/hypre/2.9.0b/lib OTHER_LIBS=/opt/intel/composer_xe_2013.5.192/compiler/lib/intel64 make COMPILER=INTEL
